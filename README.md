@@ -1,13 +1,13 @@
 # MwareIPTVModule
 MWare Solutions IPTV User Interface Module
 
-##Intro
+## Intro
 A collection of sample code and documentation to create modules for MWare IPTV user interface.
 
-##Dependencies
+## Dependencies
 * none
 
-##Usage
+## Usage
 Every module will be executed in the UI scope hence no need to import any libraries or plugins. jQuery is available during runtime.
 
 Creating a new module is very easy
