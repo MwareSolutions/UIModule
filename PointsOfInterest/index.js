@@ -35,7 +35,7 @@ function moduleIsReady(){
 	 * request data to use for points of interest
 	 */
 	$.ajax({
-		url: 'https://slashwebdesign.studio/mware/module/PointsOfInterest/data.php',
+		url: 'https://slashwebdesign.studio/mware/module/PointsOfInterest/data.json',
 		dataType: 'json',
 		success: function(data){
 
@@ -64,7 +64,7 @@ function moduleIsReady(){
 			 */
 			poi.createZone({
 				selector: '.poi',
-				width: '750px',
+				width: '640px',
 				height: '310px',
 				type: 'vertical',
 				grid: true,
