@@ -19,10 +19,10 @@ p {
 	margin: 0px 40px;
 }
 .room-service-holder.left {
-	width: 240px;
+	width: 200px;
 }
 .room-service-holder.right {
-	width: calc(100% - 480px);
+	width: calc(100% - 440px);
 }
 	.room-service-divider {
 		height: 20px;
