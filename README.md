@@ -57,3 +57,19 @@ Attach an event listener to a zone or directly on a zone item
 Open another module
 
     module.open(name)
+
+### Module properties
+
+    module.user
+    module.player    
+
+#### player methods
+    module.player.play()
+    module.player.stop()
+    module.player.rewind()    
+    module.player.forward()
+    module.player.jumpTo(seconds)
+    module.player.getProgress()
+    
+    
+    
