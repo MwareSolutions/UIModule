@@ -10,12 +10,12 @@ var poi = new MWareModule({
 	/*
 	 * @option name module name and main menu label
 	 */
-	name: 'Points of Interest',
+	name: 'Local Info',
 	
 	/*
 	 * @option content path to module html content
 	 */
-	content: 'https://slashwebdesign.studio/mware/module/PointsOfInterest/index.html',
+	content: 'PointsOfInterest/index.html',
 	
 	/*
 	 * @option events

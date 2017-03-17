@@ -9,14 +9,14 @@ var roomService = new MWareModule({
 	 * @required
 	 * Defines the module name and main menu label
 	 */
-	name: 'Room service',
+	name: 'Room Services',
 	
 	/*
 	 * @param content
 	 * @required
 	 * Defines the path to the module's html content
 	 */
-	content: 'https://slashwebdesign.studio/mware/module/RoomService/index.html',
+	content: 'RoomService/index.html',
 	
 	/*
 	 * @param events
@@ -155,6 +155,11 @@ var roomService = new MWareModule({
 				 */
 				console.log(item);
 			});
+			
+			/*
+			 * Access user object
+			 */
+			console.log(roomService.user);
 		},
 		
 		/*

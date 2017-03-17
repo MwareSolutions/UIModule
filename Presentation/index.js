@@ -10,7 +10,7 @@ var showcase = new MWareModule({
 	/*
 	 * @option name module name and main menu label
 	 */
-	name: 'Hotel Presentation',
+	name: 'Presentation',
 	
 	/*
 	 * @option player set to true if the module is a video player
