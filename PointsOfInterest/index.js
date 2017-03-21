@@ -35,9 +35,11 @@ function moduleIsReady(){
 	 * request data to use for points of interest
 	 */
 	$.ajax({
-		url: 'https://slashwebdesign.studio/mware/module/PointsOfInterest/data.json',
+		url: '//slashwebdesign.studio/mware/module/PointsOfInterest/data.json',
 		dataType: 'json',
 		success: function(data){
+			
+			console.log(data);
 
 			/*
 			 * for each poi we create div element, set up some idetifying attributes

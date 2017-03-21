@@ -90,7 +90,7 @@ function moduleIsReady(){
 				console.log('playback finished');
 				
 				// go back to previous page
-				showcase.open('Room service');
+				showcase.open('Local Info');
 			}
 		}
 	});
