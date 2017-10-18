@@ -9,7 +9,7 @@ var roomService = new MWareModule({
 	 * @required
 	 * Defines the module name and main menu label
 	 */
-	name: 'Room Services',
+	name: 'Room Service',
 	
 	/*
 	 * @param content
@@ -35,16 +35,29 @@ var roomService = new MWareModule({
 			
 			// set up a list of room service items
 			var 
+				rows = [],
 				fruits = ['Apple', 'Banana', 'Orange', 'Strawberry', 'Pineapple', 'Grape'],
 				l = fruits.length;
 			
 			for (var i = 0; i < l; i++)
 			{
-				$('.rs-fruits').append('<div class="fruit" data-name="' + fruits[i] + '">' + fruits[i] + '</div>');
+				rows.push([{
+					html: fruits[i],
+					data: {
+						'data-name': fruits[i]
+					},
+					cls: 'fruit'
+				}]);
 			}
 			
 			// create a user-navigable zone of the room service items we just created
 			roomService.createZone({
+				/*
+				 * @options rows
+				 * Matrix of items for the zone, rows and columns
+				 */
+				rows: rows,
+				
 				/*
 				 * @option selector
 				 * Defines the class name or ID of the zone container
@@ -74,15 +87,6 @@ var roomService = new MWareModule({
 				 * Defines the item selection type, background or border
 				 */
 				selection: 'background',
-				
-				/*
-				 * @option item
-				 * Defines the size of items in the zone, pixels or percentage
-				 */
-				item: {
-					width: '100%',
-					height: '45px'
-				}
 			});
 			
 			/*
@@ -105,15 +109,18 @@ var roomService = new MWareModule({
 			
 			// create another navigable zone for the order button
 			roomService.createZone({
+				rows: [[{
+					html: 'Place order',
+					style: {
+						width: '200px',
+						height: '45px'
+					}
+				}]],
 				selector: '.rs-fruits-order',
 				width: '100%',
 				height: '45px',
 				type: 'horizontal',
-				selection: 'background',
-				item: {
-					width: '200px',
-					height: '45px'
-				}
+				selection: 'background'
 			});
 			
 			/* 
@@ -128,23 +135,28 @@ var roomService = new MWareModule({
 			
 			// set up other services
 			var 
+				rows = [],
 				services = ['Room cleaning', 'Wake up call', 'Order cab', 'Order Uber', 'Special delivery', 'Check out', 'Other service #1', 'Other service #2', 'Other service #3', 'Other service #4', 'Other service #5', 'Other service #6', 'Other service #7', 'Other service #8'],
 				l = services.length;
 			
 			for (var i = 0; i < l; i++)
 			{
-				$('.other-services').append('<div class="service" data-name="' + services[i] + '">' + services[i] + '</div>');
+				rows.push({
+					html: services[i],
+					data: {
+						'data-name': services[i]
+					},
+					cls: 'service'
+				});
 			}
 			
 			roomService.createZone({
+				rows: [rows],
 				selector: '.other-services',
 				width: '100%',
 				height: '45px',
 				type: 'horizontal',
-				selection: 'background',
-				item: {
-					height: '100%'
-				}
+				selection: 'background'
 			});
 			
 			roomService.addEventListener('.other-services', 'click', function(item){

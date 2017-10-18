@@ -11,12 +11,6 @@ p {
 	margin: 0px 40px 20px 40px;
 }
 
-button {
-	background-color: transparent;
-	color: #ffffff;
-	border: none;
-}
-
 .room-service-holder {
 	display: inline-block;
 	vertical-align: top;
@@ -35,6 +29,8 @@ button {
 	}
 	.rs-fruits-order {
 		background-color: #4a4a4a;
+		text-align: center;
+		line-height: 45px;
 	}
 	.rs-fruits .fruit {
 		line-height: 45px;
