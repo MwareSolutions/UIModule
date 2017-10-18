@@ -35,46 +35,56 @@ function moduleIsReady(){
 	 * request data to use for points of interest
 	 */
 	$.ajax({
-		url: '//slashwebdesign.studio/mware/module/PointsOfInterest/data.json',
+		url: '//slashwebdesign.studio/mware.ui/module/PointsOfInterest/data.json',
 		dataType: 'json',
 		success: function(data){
 			
 			console.log(data);
 
 			/*
-			 * for each poi we create div element, set up some idetifying attributes
-			 * and push it to our zone container
+			 * build a matrix of rows and columns with items to pass into the zone
 			 */
+			var 
+				rows = [],
+				counter = 0,
+				rowIndex = 0;
+			
 			for (var i = 0; i < data.length; i++)
 			{
-				var poiItem = $('<div />');
+				if (!rows[rowIndex]) rows[rowIndex] = [];
 				
-				poiItem
-					.addClass('place')
-					.attr({
+				rows[rowIndex].push({
+					html: '<img src="' + data[i].image + '" />',
+					data: {
 						'data-name': data[i].name,
 						'data-description': data[i].description,
 						'data-address': data[i].address,
-					})
-					.html('<img src="' + data[i].image + '" />');
+					},
+					style: {
+						width: '150px'
+					},
+					cls: 'place'
+				});
 				
-				$('.poi').append(poiItem);
+				counter++;
+				
+				if (counter === 4)
+				{
+					counter = 0;
+					rowIndex++;
+				}
 			}
 
 			/*
 			 * turn the container element into a user navigable zone
 			 */
 			poi.createZone({
+				rows: rows,
 				selector: '.poi',
 				width: '640px',
 				height: '310px',
-				type: 'vertical',
-				grid: true,
-				selection: 'border',
-				item: {
-					width: '150px',
-					height: '150px'
-				}
+				type: 'grid',
+				selection: 'border'
 			});
 			
 			/*
