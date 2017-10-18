@@ -26,15 +26,33 @@ Creating a new module is very easy
 Create a user-navigable zone
 
     module.createZone({
+        rows: [[
+	    {
+	    	html: 'Apple',
+		data: {
+		    'data-id': '123'
+		},
+		style: {
+		    width: '100px'
+		},
+		cls: 'some-class'
+	    },
+	    {
+	    	html: 'Banana',
+		data: {
+		    'data-id': '124'
+		},
+		style: {
+		    width: '100px'
+		},
+		cls: 'some-class'
+	    }
+	]]
 	selector: '.rs-fruits',
 	width: '200px',
 	height: '200px',
 	type: 'vertical',
-	selection: 'background',
-	item: {
-	    width: '100%',
-	    height: '45px'
-	}
+	selection: 'background'
     })
 
 Create a video player
